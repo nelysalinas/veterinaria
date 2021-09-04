@@ -1,0 +1,53 @@
+<div class="card border-primary">
+  <div class="card-header">
+    <h3>Stocks de Productos</h1>  
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">Producto</th>
+          <th class="text-center">Lote Producto</th>
+          <th class="text-center">Cantidad</th>
+          <th class="text-center">Unidad de Medida</th>
+          <th class="text-center">Fecha de Vencimiento</th>
+          <th class="text-center">Proveedor</th>
+          <th class="text-center">Opciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @stocks.each do |stock| %>
+          <tr>
+            <td><%= stock.producto.nombre_producto %></td>
+            <td><strong><%= stock.lote_producto %></strong></td>
+            <td><%= stock.cantidad_producto %></td>
+            <td><%= stock.unidad_medida_producto %></td>
+            <td><%= formato_fecha stock.fecha_vto_producto %></td>
+            <td><%= stock.proveedor.nombre_proveedor %></td>
+            <td class="text-center">
+              <%= link_to  stock, class: 'btn btn-success btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Ver Detalles" do %>
+                <i class="fas fa-search"></i> 
+              <% end %>
+              <%= link_to  edit_stock_path(stock), class: 'btn btn-warning btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Editar" do %>
+                <i class="fas fa-pencil-alt"></i> 
+              <% end %>
+              <%= link_to  stock, method: :delete, data: { confirm: "Estas seguro/a que quierer eliminar?" }, class: 'btn btn-danger btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Eliminar" do %>
+                <i class="fas fa-trash-alt"></i> 
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Nuevo Stock para Producto', new_stock_path, class: "btn btn-primary" %>  
+  </div>
+</div>
+
+
+
+
+

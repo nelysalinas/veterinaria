@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header">
+    <h4>
+      <strong>Lote producto:</strong>
+      <%= @stock.lote_producto %>
+    -----
+      <strong>Producto:</strong>
+      <%= @stock.producto.nombre_producto %>
+    </p>  
+    </h4>  
+  </div>
+  <div class="card-body">
+    <p>
+      <strong>Cantidad del Producto:</strong>
+      <%= @stock.cantidad_producto %>
+    </p>
+
+    <p>
+      <strong>Unidad de Medida:</strong>
+      <%= @stock.unidad_medida_producto %>
+    </p>
+
+    <p>
+      <strong>Fecha de Vencimiento:</strong>
+      <%= @stock.fecha_vto_producto %>
+    </p>
+
+    <p>
+      <strong>Proveedor:</strong>
+      <%= @stock.proveedor.nombre_proveedor %>
+    </p>
+
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Editar', edit_stock_path(@stock), class: "btn btn-success" %> |
+    <%= link_to 'Atràs', stocks_path, class: "btn btn-warning" %>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,54 @@
+<div class="container">
+  <%= form_with(model: stock, validate: true) do |form| %>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :producto_id %>
+          <%= form.collection_select :producto_id, Producto.select("id, nombre_producto"), :id, :nombre_producto, {prompt: "Seleccione un Producto"}, { class: "form-select" } %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :lote_producto %>
+          <%= form.text_field :lote_producto, class: "form-control" %>
+        </div>
+      </div> 
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+          <div class="form-group">
+            <%= form.label :cantidad_producto %>
+            <%= form.number_field :cantidad_producto, class: "form-control", min: 1 %>
+          </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :unidad_medida_producto %>
+          <%= form.select :unidad_medida_producto, Stock.unidad_medida_productos.keys.map { |u| [u.humanize, u] }, {} , {class: "form-select"} %>
+        </div>
+      </div> 
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :fecha_vto_producto %>
+          <%= form.text_field :fecha_vto_producto, type: "date", class: "form-control" %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :proveedor_id %>
+          <%= form.collection_select :proveedor_id, Proveedor.select("id, nombre_proveedor"), :id, :nombre_proveedor, {prompt: "Seleccione un Proveedor"}, { class: "form-select" } %>
+        </div>
+      </div> 
+    </div>  
+    <br>
+    <div class="actions">
+      <%= form.submit "Registrar", class: "btn btn-primary" %>|<%= link_to "Cancelar", stocks_path, class: "btn btn-warning" %>
+    </div>
+  <% end %>
+
+</div>
+  
