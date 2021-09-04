@@ -1,0 +1,41 @@
+
+<div class="card border-primary">
+  <div class="card-header">
+    <h3>Tipos de Clientes</h3>  
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">Tipo de Cliente</th>
+          <th class="text-center">Opciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @tipo_clientes.each do |tipo_cliente| %>
+          <tr>
+            <td><%= tipo_cliente.desc_tipo_cliente %></td>
+            <td class="text-center">
+              <%= link_to  tipo_cliente, class: 'btn btn-success btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Ver Detalles" do %>
+                <i class="fas fa-search"></i> 
+              <% end %>
+              <%= link_to  edit_tipo_cliente_path(tipo_cliente), class: 'btn btn-warning btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Editar" do %>
+                <i class="fas fa-pencil-alt"></i> 
+              <% end %>
+              <%= link_to  tipo_cliente, method: :delete, data: { confirm: "Estas seguro/a que quierer eliminar?" }, class: 'btn btn-danger btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Eliminar" do %>
+                <i class="fas fa-trash-alt"></i> 
+              <% end %>
+              
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>  
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Nuevo Tipo de Cliente', new_tipo_cliente_path, class: "btn btn-primary" %>  
+  </div>
+</div>  
+
+

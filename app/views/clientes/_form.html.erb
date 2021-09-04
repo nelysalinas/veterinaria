@@ -1,0 +1,78 @@
+<div class="container">
+  <%= form_with(model: cliente, validate: true) do |form| %>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :cedula_cliente, "N° CI" %>
+          <%= form.number_field :cedula_cliente, class: "form-control" %>
+        </div>  
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :nombre_cliente, "Cliente" %>
+          <%= form.text_field :nombre_cliente, class: "form-control" %>
+        </div>  
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :apellido_cliente, "Apellido" %>
+          <%= form.text_field :apellido_cliente, class: "form-control" %>
+        </div>  
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :direccion_cliente, "Dirección" %>
+          <%= form.text_field :direccion_cliente, class: "form-control" %>
+        </div>  
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :telefono_cliente, "Teléfono" %>
+          <%= form.text_field :telefono_cliente, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :email_cliente, "Correo Electrónico" %>
+          <%= form.email_field :email_cliente, class: "form-control" %>
+        </div>  
+      </div>
+    </div>
+    <br>  
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :nombre_referencia_cliente, "Razon Social" %>
+          <%= form.text_field :nombre_referencia_cliente, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :ruc_cliente, "RUC" %>
+          <%= form.text_field :ruc_cliente, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :telefono_referencia_cliente, "Teléfono de Referencia" %>
+          <%= form.text_field :telefono_referencia_cliente, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :tipo_cliente_id, "Tipo de Cliente" %>
+          <%= form.collection_select :tipo_cliente_id, TipoCliente.select("id, desc_tipo_cliente"), :id, :desc_tipo_cliente, {prompt: "Seleccione un Tipo de Cliente"}, { class: "form-select" } %>
+        </div>
+      </div>
+    </div>
+    <br>  
+    <div class="actions">
+      <%= form.submit "Registrar", class: "btn btn-primary" %>|<%= link_to "Cancelar", clientes_path, class: "btn btn-warning" %>
+    </div>
+  <% end %>
+
+</div>
+  

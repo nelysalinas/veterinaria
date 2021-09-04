@@ -1,0 +1,12 @@
+<%= form_with(model: tipo_cliente, validate: true) do |form| %>
+
+  <div class="form-group">
+    <%= form.label :desc_tipo_cliente, "Tipo de Cliente" %>
+    <%= form.text_field :desc_tipo_cliente, class: "form-control" %>
+  </div>
+  <br>
+  
+  <div class="actions">
+    <%= form.submit "Registrar", class: "btn btn-primary" %>|<%= link_to "Cancelar", tipo_clientes_path, class: "btn btn-warning" %>
+  </div>
+<% end %>

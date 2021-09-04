@@ -1,0 +1,54 @@
+<div class="container">
+  <%= form_with(model: proveedor, validate: true) do |form| %>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :ruc_proveedor, 'RUC' %>
+          <%= form.text_field :ruc_proveedor, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :nombre_proveedor, 'Nombre' %>
+          <%= form.text_field :nombre_proveedor, class: 'form-control' %>
+        </div>  
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :telefono_proveedor, 'Teléfono' %>
+          <%= form.text_field :telefono_proveedor, class: 'form-control' %>
+        </div>  
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :email_proveedor, 'Correo Electrónico' %>
+          <%= form.text_field :email_proveedor, class: 'form-control' %>
+        </div>  
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <%= form.label :nombre_contacto_proveedor, 'Nombre Contacto' %>
+          <%= form.text_field :nombre_contacto_proveedor, class: 'form-control' %>
+        </div>  
+      </div>
+      <div class="col">
+        <div class="field">
+          <%= form.label :telefono_contacto_proveedor, 'Telefono Contacto' %>
+          <%= form.text_field :telefono_contacto_proveedor, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="actions">
+      <%= form.submit 'Registrar', class: 'btn btn-primary' %>|<%= link_to 'Cancelar', proveedores_path, class: 'btn btn-warning' %>
+    </div>
+  <% end %>
+
+</div>
+

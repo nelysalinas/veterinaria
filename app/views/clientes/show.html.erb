@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Ficha del Cliente <strong><%= @cliente.cedula_cliente %></strong></h3>
+  </div>
+  <div class="card-body">
+    <p>
+      <strong>Nombre:</strong>
+      <%= @cliente.nombre_cliente %>
+    </p>
+
+    <p>
+      <strong>Apellido:</strong>
+      <%= @cliente.apellido_cliente %>
+    </p>
+
+    <p>
+      <strong>Direccion:</strong>
+      <%= @cliente.direccion_cliente %>
+    </p>
+
+    <p>
+      <strong>Telefono:</strong>
+      <%= @cliente.telefono_cliente %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @cliente.email_cliente %>
+    </p>
+
+    <p>
+      <strong>Nombre de Referencia:</strong>
+      <%= @cliente.nombre_referencia_cliente %>
+    </p>
+
+    <p>
+      <strong>Telefono de Referencia:</strong>
+      <%= @cliente.telefono_referencia_cliente %>
+    </p>
+
+    <p>
+      <strong>RUC:</strong>
+      <%= @cliente.ruc_cliente %>
+    </p>
+
+    <p>
+      <strong>Tipo de Cliente:</strong>
+      <%= @cliente.tipo_cliente.desc_tipo_cliente %>
+    </p>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Editar', edit_cliente_path(@cliente), class: "btn btn-success" %>|<%= link_to 'Atrás', clientes_path, class: 'btn btn-warning' %>  
+  </div>
+</div>
+
+
+
+

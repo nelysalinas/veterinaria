@@ -1,0 +1,51 @@
+<div class="card border-primary">
+  <div class="card-header">
+    <h3>Listado de Clientes</h3>  
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">N° CI</th>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Apellido</th>
+          <th class="text-center">Dirección</th>
+          <th class="text-center">Teléfono</th>
+          <th class="text-center">Ruc</th>
+          <th class="text-center">Tipo</th>
+          <th class="text-center">Opciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @clientes.each do |cliente| %>
+          <tr>
+            <td><%= cliente.cedula_cliente %></td>
+            <td><%= cliente.nombre_cliente %></td>
+            <td><%= cliente.apellido_cliente %></td>
+            <td><%= cliente.direccion_cliente %></td>
+            <td class="text-center"><%= cliente.telefono_cliente %></td>
+            <td><%= cliente.ruc_cliente %></td>
+            <td class="text-center"><%= cliente.tipo_cliente.desc_tipo_cliente %></td>
+            <td class="text-center">
+              <%= link_to  cliente, class: 'btn btn-success btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Ver Detalles" do %>
+                <i class="fas fa-search"></i> 
+              <% end %>
+              <%= link_to  edit_cliente_path(cliente), class: 'btn btn-warning btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Editar" do %>
+                <i class="fas fa-pencil-alt"></i> 
+              <% end %>
+              <%= link_to  cliente, method: :delete, data: { confirm: "Estas seguro/a que quierer eliminar?" }, class: 'btn btn-danger btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Eliminar" do %>
+                <i class="fas fa-trash-alt"></i> 
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>  
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Nuevo Cliente', new_cliente_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+

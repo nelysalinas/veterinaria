@@ -1,0 +1,15 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+  //stilos para errores de validacion
+.field_with_errors {
+    display: inline;
+}
+
+.field_with_errors .message {
+    color: #D00;
+    padding-left: 5px;
+    font-size: 12px;
+}

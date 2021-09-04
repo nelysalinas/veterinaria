@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: proveedores
+#
+#  id                          :bigint           not null, primary key
+#  ruc_proveedor               :string
+#  nombre_proveedor            :string
+#  telefono_proveedor          :string
+#  email_proveedor             :string
+#  nombre_contacto_proveedor   :string
+#  telefono_contacto_proveedor :string
+#  created_at                  :datetime         not null
+#  updated_at                  :datetime         not null
+#
+
+one:
+  ruc_proveedor: MyString
+  nombre_proveedor: MyString
+  telefono_proveedor: MyString
+  email_proveedor: MyString
+  nombre_contacto_proveedor: MyString
+  telefono_contacto_proveedor: MyString
+
+two:
+  ruc_proveedor: MyString
+  nombre_proveedor: MyString
+  telefono_proveedor: MyString
+  email_proveedor: MyString
+  nombre_contacto_proveedor: MyString
+  telefono_contacto_proveedor: MyString

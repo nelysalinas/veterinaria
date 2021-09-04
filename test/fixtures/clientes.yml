@@ -1,0 +1,42 @@
+# == Schema Information
+#
+# Table name: clientes
+#
+#  id                          :bigint           not null, primary key
+#  cedula_cliente              :integer
+#  nombre_cliente              :string
+#  apellido_cliente            :string
+#  direccion_cliente           :string
+#  telefono_cliente            :string
+#  email_cliente               :string
+#  nombre_referencia_cliente   :string
+#  telefono_referencia_cliente :string
+#  ruc_cliente                 :string
+#  tipo_cliente_id             :bigint           not null
+#  created_at                  :datetime         not null
+#  updated_at                  :datetime         not null
+#
+
+one:
+  cedula_cliente: 1
+  nombre_cliente: MyString
+  apellido_cliente: MyString
+  direccion_cliente: MyString
+  telefono_cliente: MyString
+  email_cliente: MyString
+  nombre_referencia_cliente: MyString
+  telefono_referencia_cliente: MyString
+  ruc_cliente: MyString
+  tipo_cliente: one
+
+two:
+  cedula_cliente: 1
+  nombre_cliente: MyString
+  apellido_cliente: MyString
+  direccion_cliente: MyString
+  telefono_cliente: MyString
+  email_cliente: MyString
+  nombre_referencia_cliente: MyString
+  telefono_referencia_cliente: MyString
+  ruc_cliente: MyString
+  tipo_cliente: two
