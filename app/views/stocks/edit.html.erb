@@ -1,6 +1,8 @@
-<h1>Editing Stock</h1>
-
-<%= render 'form', stock: @stock %>
-
-<%= link_to 'Show', @stock %> |
-<%= link_to 'Back', stocks_path %>
+<div class="card border-primary">
+    <div class="card-header">
+        <h3>Editando Stock</h3>    
+    </div>
+    <div class="card-body">
+        <%= render 'form', stock: @stock %>    
+    </div>    
+</div>

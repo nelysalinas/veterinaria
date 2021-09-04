@@ -3,7 +3,7 @@
     <h3>Stocks de Productos</h1>  
   </div>
   <div class="card-body">
-    <table class="table">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th class="text-center">Producto</th>
@@ -19,12 +19,12 @@
       <tbody>
         <% @stocks.each do |stock| %>
           <tr>
-            <td><%= stock.producto.nombre_producto %></td>
-            <td><strong><%= stock.lote_producto %></strong></td>
-            <td><%= stock.cantidad_producto %></td>
-            <td><%= stock.unidad_medida_producto %></td>
-            <td><%= formato_fecha stock.fecha_vto_producto %></td>
-            <td><%= stock.proveedor.nombre_proveedor %></td>
+            <td class="text-center"><%= stock.producto.nombre_producto %></td>
+            <td class="text-center"><strong><%= stock.lote_producto %></strong></td>
+            <td class="text-center"><%= stock.cantidad_producto %></td>
+            <td class="text-center"><%= stock.unidad_medida_producto %></td>
+            <td class="text-center"><%= formato_fecha stock.fecha_vto_producto %></td>
+            <td class="text-center"><%= stock.proveedor.nombre_proveedor %></td>
             <td class="text-center">
               <%= link_to  stock, class: 'btn btn-success btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Ver Detalles" do %>
                 <i class="fas fa-search"></i> 
