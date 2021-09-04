@@ -1,0 +1,16 @@
+  <%= form_with(model: producto, validate: true) do |form| %>
+
+    <div class="form-group">
+      <%= form.label :nombre_producto, "Nombre del Producto" %>
+      <%= form.text_field :nombre_producto, class: "form-control" %>
+    </div>
+    <br>
+    <div class="form-group">
+      <%= form.label :detalle_producto, "Detalles del Producto" %>
+      <%= form.text_field :detalle_producto, class: "form-control" %>
+    </div>
+    <br>  
+    <div class="actions">
+      <%= form.submit "Registrar", class: "btn btn-primary" %>|<%= link_to "Cancelar", productos_path, class: "btn btn-warning" %>
+    </div>
+  <% end %>

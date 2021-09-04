@@ -8,13 +8,16 @@
             <%= link_to "Proveedores", proveedores_path, class: "nav-link #{ active_class?('proveedores') }" %>
         </li>
         <li class="nav-item">
+            <%= link_to "Productos", productos_path, class: "nav-link #{ active_class?('productos') }" %>
+        </li>
+        <li class="nav-item">
             <%= link_to "Tipo de Cliente", tipo_clientes_path, class: "nav-link #{ active_class?('tipo_clientes') }" %>
         </li>
     <% end %>
 </ul>
 <ul class="navbar-nav my-2 my-sm-0">
     <% if current_user %>
-        <li class="nav-item dropdown">
+        <li claproveedoresss="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <%= current_user.email %>
             </a>

@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: productos
+#
+#  id               :bigint           not null, primary key
+#  nombre_producto  :string
+#  detalle_producto :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+one:
+  nombre_producto: MyString
+  detalle_producto: MyString
+
+two:
+  nombre_producto: MyString
+  detalle_producto: MyString

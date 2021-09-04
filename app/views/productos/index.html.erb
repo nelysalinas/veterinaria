@@ -1,0 +1,41 @@
+<div class="card border-primary">
+  <div class="card-header">
+    <h3>Productos</h1>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Detalles</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @productos.each do |producto| %>
+          <tr>
+            <td><%= producto.nombre_producto %></td>
+            <td><%= producto.detalle_producto %></td>
+            <td class="text-center">
+              <%= link_to  producto, class: 'btn btn-success btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Ver Detalles" do %>
+                <i class="fas fa-search"></i> 
+              <% end %>
+              <%= link_to  edit_producto_path(producto), class: 'btn btn-warning btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Editar" do %>
+                <i class="fas fa-pencil-alt"></i> 
+              <% end %>
+              <%= link_to  producto, method: :delete, data: { confirm: "Estas seguro/a que quierer eliminar?" }, class: 'btn btn-danger btn-sm', "data-toggle" => "tooltip", "data-placement" => "top", title: "Eliminar" do %>
+                <i class="fas fa-trash-alt"></i> 
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>  
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Nuevo Producto', new_producto_path, class: "btn btn-primary" %>  
+  </div>
+</div>
+
+

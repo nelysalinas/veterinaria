@@ -1,0 +1,19 @@
+<div class="card border-primary">  
+  <div class="card-header">
+    <p>
+      <strong>Nombre producto:</strong>
+      <%= @producto.nombre_producto %>
+    </p>  
+  </div>
+  <div class="card-body">
+    <p>
+      <strong>Detalle producto:</strong>
+      <%= @producto.detalle_producto %>
+    </p>  
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Editar', edit_producto_path(@producto), class: "btn btn-success" %> |
+    <%= link_to 'Atràs', productos_path, class: "btn btn-warning" %>  
+  </div>
+</div>
+

@@ -9,6 +9,8 @@
     inflect.irregular 'tipo_cliente', 'tipo_clientes' 
     inflect.irregular 'cliente', 'clientes'
     inflect.irregular 'proveedor', 'proveedores'
+    inflect.irregular 'producto', 'productos'
+    inflect.irregular 'stock', 'stocks'
 
 #   inflect.uncountable %w( fish sheep )
 end
